@@ -33,21 +33,45 @@ namespace csloop
             //    Console.WriteLine(item);
             //}
 
-            int x = 1;
-            while (x < 50)
+            //int x = 1;
+            //while (x < 50)
+            //{
+            //    Console.Clear();
+            //    Console.SetCursorPosition(x, 5);
+            //    if (x % 3 == 0)
+            //        Console.WriteLine("__@");
+            //    else if (x % 3 == 1)
+            //        Console.WriteLine("_^@");
+            //    else
+            //        Console.WriteLine("^_@");
+            //    Thread.Sleep(100);
+            //    x++;
+
+
+            //}
+
+            bool state = true;
+            while (state)
             {
-                Console.Clear();
-                Console.SetCursorPosition(x, 5);
-                if (x % 3 == 0)
-                    Console.WriteLine("__@");
-                else if (x % 3 == 1)
-                    Console.WriteLine("_^@");
-                else
-                    Console.WriteLine("^_@");
-                Thread.Sleep(100);
-                x++;
-
-
+                ConsoleKeyInfo info = Console.ReadKey();
+                switch (info.Key)
+                {
+                    case ConsoleKey.UpArrow:
+                        Console.WriteLine("위로이동");
+                        break;
+                    case ConsoleKey.RightArrow:
+                        Console.WriteLine("오른쪽으로이동");
+                        break;
+                    case ConsoleKey.DownArrow:
+                        Console.WriteLine("아래로이동");
+                        break;
+                    case ConsoleKey.LeftArrow:
+                        Console.WriteLine("왼쪽으로이동");
+                        break;
+                    case ConsoleKey.X:
+                        state = false;
+                        break;
+                }
             }
         }
     }
